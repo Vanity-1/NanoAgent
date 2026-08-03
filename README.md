@@ -273,4 +273,226 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 - OpenAI - 提供强大的 LLM API
 - MCP 社区 - Model Context Protocol 标准
-- Python 生态 - 优秀的开发工具链
+- Python 生态 - 优秀的开发工具链## ❓ 常见问题 (FAQ)
+
+### 基础问题
+
+**Q: ZipAgent 是什么？**
+
+A: ZipAgent 是一个现代化的 Python AI Agent 框架，专注于简洁、高效和易扩展。仅用 700 行核心代码实现 Agent 引擎、工具系统、对话管理的完整智能体框架。
+
+**Q: ZipAgent 与 LangChain/CrewAI 有什么区别？**
+
+A: ZipAgent 的特点：
+- **极简设计**：700 行核心代码，几行代码构建 Agent
+- **原生 MCP 支持**：无缝集成 Model Context Protocol 工具
+- **流式输出**：完整的流式处理支持，实时交互体验
+- **中文友好**：原生支持中文，文档完善
+
+**Q: ZipAgent 适合什么场景？**
+
+A: 适用场景：
+- 💬 聊天机器人（客服、问答、闲聊）
+- 🔧 智能助手（代码助手、写作助手、数据分析）
+- 🌐 工具集成（API、数据库、第三方服务）
+- 📊 工作流自动化（复杂多步骤任务）
+- 🔍 知识问答（基于知识库的问答系统）
+
+### 安装与配置
+
+**Q: 如何安装 ZipAgent？**
+
+A:
+```bash
+pip install zipagent
+```
+
+**Q: 需要什么环境？**
+
+A:
+- Python 3.10+
+- OpenAI API Key（或其他兼容的 LLM API）
+
+**Q: 如何配置 API Key？**
+
+A:
+```python
+from zipagent import OpenAIModel
+
+model = OpenAIModel(
+    model="gpt-4",
+    api_key="your_api_key",
+    base_url="https://api.openai.com/v1"
+)
+
+agent = Agent(
+    name="CustomAgent",
+    tools=[calculate],
+    model=model
+)
+```
+
+### 工具系统
+
+**Q: 如何定义工具？**
+
+A: 使用 `@function_tool` 装饰器：
+```python
+from zipagent import function_tool
+
+@function_tool
+def calculate(expression: str) -> str:
+    """计算数学表达式"""
+    return str(eval(expression))
+```
+
+**Q: 如何使用 MCP 工具？**
+
+A:
+```python
+from zipagent import MCPTool
+
+# 连接外部 MCP 工具
+amap_tools = await MCPTool.connect(
+    command="npx",
+    args=["-y", "@amap/amap-maps-mcp-server"],
+    env={"AMAP_MAPS_API_KEY": "your_key"}
+)
+
+agent = Agent(
+    name="MapAssistant",
+    tools=[amap_tools]
+)
+```
+
+**Q: 本地工具和 MCP 工具可以混合使用吗？**
+
+A: 可以！ZipAgent 提供统一接口：
+```python
+agent = Agent(
+    tools=[calculate, amap_tools]  # 混合使用
+)
+```
+
+### 执行与输出
+
+**Q: 如何运行 Agent？**
+
+A:
+```python
+from zipagent import Runner
+
+result = Runner.run(agent, "计算 23 + 45")
+print(result.content)
+```
+
+**Q: 如何获取流式输出？**
+
+A:
+```python
+from zipagent import StreamEventType
+
+for event in Runner.run_stream(agent, "解释什么是人工智能"):
+    if event.type == StreamEventType.ANSWER_DELTA:
+        print(event.content, end="", flush=True)
+    elif event.type == StreamEventType.TOOL_CALL:
+        print(f"调用工具: {event.tool_name}")
+```
+
+**Q: 如何管理多轮对话？**
+
+A:
+```python
+from zipagent import Context
+
+context = Context()
+result1 = Runner.run(agent, "我叫小明", context=context)
+result2 = Runner.run(agent, "我叫什么名字？", context=context)
+
+# 对话统计
+print(f"对话轮数: {context.turn_count}")
+print(f"Token 使用: {context.usage}")
+```
+
+### 异常处理
+
+**Q: 如何处理异常？**
+
+A:
+```python
+from zipagent import ToolExecutionError, MaxTurnsError
+
+try:
+    result = Runner.run(agent, "计算 10 / 0", max_turns=3)
+except ToolExecutionError as e:
+    print(f"工具执行失败: {e.details['tool_name']}")
+except MaxTurnsError as e:
+    print(f"达到最大轮次: {e.details['max_turns']}")
+```
+
+### 开发与贡献
+
+**Q: 如何本地开发？**
+
+A:
+```bash
+# 克隆项目
+git clone https://github.com/JiayuXu0/ZipAgent.git
+cd ZipAgent
+
+# 使用 uv 管理依赖
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv sync
+
+# 运行测试
+uv run pytest
+
+# 代码检查
+uv run ruff check --fix
+uv run pyright
+```
+
+**Q: 如何贡献代码？**
+
+A:
+1. 🐛 **报告 Bug**: 提交 [Issue](https://github.com/JiayuXu0/ZipAgent/issues)
+2. 💡 **功能建议**: 讨论新功能想法
+3. 📝 **文档改进**: 完善文档和示例
+4. 🔧 **代码贡献**: 提交 Pull Request
+
+### 故障排查
+
+**Q: API Key 无效？**
+
+A:
+- 检查 API Key 是否正确
+- 确认 base_url 配置是否正确
+- 检查 API Key 是否有额度
+
+**Q: 工具执行失败？**
+
+A:
+- 检查工具函数参数是否正确
+- 确认工具返回类型是否匹配
+- 查看 ToolExecutionError.details 获取详细信息
+
+**Q: MCP 工具连接失败？**
+
+A:
+- 检查 MCP server 是否安装正确
+- 确认环境变量配置正确
+- 查看 MCP server 日志
+
+**Q: 流式输出中断？**
+
+A:
+- 检查网络连接稳定性
+- 确认模型是否支持流式输出
+- 检查 max_turns 设置是否合理
+
+**Q: 获取更多帮助？**
+
+A:
+- [📚 文档](https://jiayuxu0.github.io/zipagent)
+- [💬 讨论](https://github.com/JiayuXu0/ZipAgent/discussions)
+- [🐛 问题反馈](https://github.com/JiayuXu0/ZipAgent/issues)
