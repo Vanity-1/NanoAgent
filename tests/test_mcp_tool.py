@@ -8,8 +8,8 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from zipagent import Agent, function_tool
-from zipagent.mcp_tool import (
+from nanoagent import Agent, function_tool
+from nanoagent.mcp_tool import (
     MCPClient,
     MCPError,
     MCPNotAvailableError,
@@ -100,7 +100,7 @@ class TestMCPToolPool:
     @pytest.mark.asyncio
     async def test_add_mcp_server_without_mcp(self):
         """测试在没有 MCP SDK 的情况下添加服务器"""
-        with patch("zipagent.mcp_tool.MCP_AVAILABLE", False):
+        with patch("nanoagent.mcp_tool.MCP_AVAILABLE", False):
             pool = _MCPToolPool()
 
             with pytest.raises(MCPNotAvailableError):
@@ -313,7 +313,7 @@ class TestMCPErrors:
 
     def test_mcp_error_inheritance(self):
         """测试 MCP 错误继承关系"""
-        from zipagent.exceptions import ToolError
+        from nanoagent.exceptions import ToolError
 
         error = MCPError("test error", tool_name="test_tool")
         assert isinstance(error, ToolError)

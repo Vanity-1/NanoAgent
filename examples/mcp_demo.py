@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ZipAgent MCP 工具演示
+NanoAgent MCP 工具演示
 
 展示 MCP (Model Context Protocol) 工具集成：
 1. 新的 MCPTool.connect() API
@@ -12,7 +12,7 @@ ZipAgent MCP 工具演示
 import asyncio
 import datetime
 
-from zipagent import Agent, function_tool
+from nanoagent import Agent, function_tool
 
 # ========== 工具定义 ==========
 
@@ -62,7 +62,7 @@ async def demo_1_mcp_integration():
     print("=" * 60)
 
     try:
-        from zipagent import MCPTool
+        from nanoagent import MCPTool
 
         print("✅ MCP 工具支持已启用")
     except ImportError:
@@ -131,8 +131,8 @@ async def demo_3_real_mcp_usage():
     try:
         import time
 
-        from zipagent import MCPTool, Runner
-        from zipagent.stream import StreamEventType
+        from nanoagent import MCPTool, Runner
+        from nanoagent.stream import StreamEventType
 
         # 检查 API key
         amap_api_key = "aa49489bbe0255ab108e386e6395411a"
@@ -298,7 +298,7 @@ async def demo_4_quick_examples():
 
 async def main():
     """主演示函数"""
-    print("🌟 ZipAgent MCP 工具演示")
+    print("🌟 NanoAgent MCP 工具演示")
     print("展示 MCP 工具集成的完整功能")
 
     try:

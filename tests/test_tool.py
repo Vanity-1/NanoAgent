@@ -1,7 +1,7 @@
 """Tool 模块测试"""
 
-from zipagent import Tool, function_tool
-from zipagent.tool import ToolResult
+from nanoagent import Tool, function_tool
+from nanoagent.tool import ToolResult
 
 
 class TestToolResult:

@@ -1,13 +1,13 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-Runtime code lives under `src/zipagent/`, with core agents in `agent.py`, execution control in `runner.py`, and supporting utilities across `context.py`, `stream.py`, and tool integrations (`tool.py`, `mcp_tool.py`). Shared prompts reside in `src/zipagent/system.md`. Tests mirror this layout inside `tests/`, while quick-start examples are in `examples/` and contributor docs in `docs/`. Keep new assets alongside related modules to simplify discovery.
+Runtime code lives under `src/nanoagent/`, with core agents in `agent.py`, execution control in `runner.py`, and supporting utilities across `context.py`, `stream.py`, and tool integrations (`tool.py`, `mcp_tool.py`). Shared prompts reside in `src/nanoagent/system.md`. Tests mirror this layout inside `tests/`, while quick-start examples are in `examples/` and contributor docs in `docs/`. Keep new assets alongside related modules to simplify discovery.
 
 ## Build, Test & Development Commands
 - `uv sync` installs dependencies from `pyproject.toml`/`uv.lock`.
 - `uv run ruff check --fix` formats and lint-fixes the codebase.
 - `uv run pyright` performs strict type analysis.
-- `uv run pytest` executes the test suite; add `--cov=zipagent --cov-report=term-missing` to inspect coverage.
+- `uv run pytest` executes the test suite; add `--cov=nanoagent --cov-report=term-missing` to inspect coverage.
 - `uv build` (or `hatch build`) produces distributable packages when preparing releases.
 
 ## Coding Style & Naming Conventions

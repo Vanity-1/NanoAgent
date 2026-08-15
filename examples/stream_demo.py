@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LiteAgent 流式输出演示
+NanoAgent 流式输出演示
 
 展示所有流式输出功能：
 1. 段落级流式输出
@@ -13,7 +13,7 @@ LiteAgent 流式输出演示
 
 import time
 
-from zipagent import (
+from nanoagent import (
     Agent,
     Runner,
     StreamEvent,
@@ -317,7 +317,7 @@ def demo_6_performance_comparison():
 
 def main():
     """主演示函数"""
-    print("🚀 ZipAgent 完整流式输出演示")
+    print("🚀 NanoAgent 完整流式输出演示")
     print("本演示将展示所有流式输出功能和使用场景")
 
     try:

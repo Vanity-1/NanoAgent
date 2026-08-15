@@ -1,23 +1,17 @@
 <div align="center">
 
-⭐ **如果这个项目对你有帮助，请给我们一个 Star！** ⭐
+# NanoAgent
 
-<p align="center">
-  <img src="docs/assets/logo.jpg" alt="ZipAgent Logo" width="120"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=45&duration=3000&pause=1000&color=2E86AB&center=true&vCenter=true&width=300&height=60&lines=ZipAgent" alt="ZipAgent Title"/>
-</p>
-
-[![PyPI version](https://badge.fury.io/py/zipagent.svg)](https://badge.fury.io/py/zipagent)
-[![Downloads](https://pepy.tech/badge/zipagent)](https://pepy.tech/project/zipagent)
-[![Python version](https://img.shields.io/pypi/pyversions/zipagent.svg)](https://pypi.org/project/zipagent/)
+[![PyPI version](https://badge.fury.io/py/nanoagent.svg)](https://badge.fury.io/py/nanoagent)
+[![Downloads](https://pepy.tech/badge/nanoagent)](https://pepy.tech/project/nanoagent)
+[![Python version](https://img.shields.io/pypi/pyversions/nanoagent.svg)](https://pypi.org/project/nanoagent/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[📚 文档](https://jiayuxu0.github.io/zipagent) | [🚀 快速开始](#-快速开始) | [💬 讨论](https://github.com/JiayuXu0/ZipAgent/discussions) | [🐛 问题反馈](https://github.com/JiayuXu0/ZipAgent/issues) | [🌍 English](README_EN.md)
+[📚 文档](https://jiayuxu0.github.io/nanoagent) | [🚀 快速开始](#-快速开始) | [💬 讨论](https://github.com/Vanity-1/NanoAgent/discussions) | [🐛 问题反馈](https://github.com/Vanity-1/NanoAgent/issues) | [🌍 English](README_EN.md)
 
 </div>
 
-ZipAgent 是一个现代化的 Python AI Agent 框架，专注于简洁、高效和易扩展。**仅用 700 行核心代码实现 Agent 引擎、工具系统、对话管理的完整智能体框架，让你快速构建专属的 AI 助手。**
+NanoAgent 是一个现代化的 Python AI Agent 框架，专注于简洁、高效和易扩展。**仅用 700 行核心代码实现 Agent 引擎、工具系统、对话管理的完整智能体框架，让你快速构建专属的 AI 助手。**
 
 ## 🎯 应用场景
 
@@ -73,13 +67,13 @@ ZipAgent 是一个现代化的 Python AI Agent 框架，专注于简洁、高效
 ### 安装
 
 ```bash
-pip install zipagent
+pip install nanoagent
 ```
 
 ### 5分钟上手
 
 ```python
-from zipagent import Agent, Runner, function_tool
+from nanoagent import Agent, Runner, function_tool
 
 # 1. 定义工具
 @function_tool
@@ -104,7 +98,7 @@ print(result.content)  # "23 + 45 的计算结果是 68"
 ### 🌊 流式输出
 
 ```python
-from zipagent import StreamEventType
+from nanoagent import StreamEventType
 
 # 实时流式响应
 for event in Runner.run_stream(agent, "解释什么是人工智能"):
@@ -117,7 +111,7 @@ for event in Runner.run_stream(agent, "解释什么是人工智能"):
 ### 📝 上下文管理
 
 ```python
-from zipagent import Context
+from nanoagent import Context
 
 # 多轮对话
 context = Context()
@@ -134,7 +128,7 @@ print(f"Token 使用: {context.usage}")
 ### 🔗 MCP 工具集成
 
 ```python
-from zipagent import MCPTool
+from nanoagent import MCPTool
 
 # 连接外部 MCP 工具
 async def demo():
@@ -161,7 +155,7 @@ async def demo():
 ### 异常处理
 
 ```python
-from zipagent import ToolExecutionError, MaxTurnsError
+from nanoagent import ToolExecutionError, MaxTurnsError
 
 try:
     result = Runner.run(agent, "计算 10 / 0", max_turns=3)
@@ -174,7 +168,7 @@ except MaxTurnsError as e:
 ### 自定义模型
 
 ```python
-from zipagent import OpenAIModel
+from nanoagent import OpenAIModel
 
 # 自定义模型配置
 model = OpenAIModel(
@@ -217,8 +211,8 @@ python examples/mcp_demo.py
 ## 🏗️ 项目架构
 
 ```
-ZipAgent/
-├── src/zipagent/           # 核心框架
+NanoAgent/
+├── src/nanoagent/           # 核心框架
 │   ├── agent.py            # Agent 核心类
 │   ├── context.py          # 上下文管理
 │   ├── model.py            # LLM 模型抽象
@@ -239,8 +233,8 @@ ZipAgent/
 
 ```bash
 # 克隆项目
-git clone https://github.com/JiayuXu0/ZipAgent.git
-cd ZipAgent
+git clone https://github.com/Vanity-1/NanoAgent.git
+cd NanoAgent
 
 # 使用 uv 管理依赖（推荐）
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -258,7 +252,7 @@ uv run pyright
 
 我们欢迎各种形式的贡献！
 
-1. 🐛 **报告 Bug**: 提交 [Issue](https://github.com/JiayuXu0/ZipAgent/issues)
+1. 🐛 **报告 Bug**: 提交 [Issue](https://github.com/Vanity-1/NanoAgent/issues)
 2. 💡 **功能建议**: 讨论新功能想法
 3. 📝 **文档改进**: 完善文档和示例
 4. 🔧 **代码贡献**: 提交 Pull Request
@@ -277,19 +271,19 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ### 基础问题
 
-**Q: ZipAgent 是什么？**
+**Q: NanoAgent 是什么？**
 
-A: ZipAgent 是一个现代化的 Python AI Agent 框架，专注于简洁、高效和易扩展。仅用 700 行核心代码实现 Agent 引擎、工具系统、对话管理的完整智能体框架。
+A: NanoAgent 是一个现代化的 Python AI Agent 框架，专注于简洁、高效和易扩展。仅用 700 行核心代码实现 Agent 引擎、工具系统、对话管理的完整智能体框架。
 
-**Q: ZipAgent 与 LangChain/CrewAI 有什么区别？**
+**Q: NanoAgent 与 LangChain/CrewAI 有什么区别？**
 
-A: ZipAgent 的特点：
+A: NanoAgent 的特点：
 - **极简设计**：700 行核心代码，几行代码构建 Agent
 - **原生 MCP 支持**：无缝集成 Model Context Protocol 工具
 - **流式输出**：完整的流式处理支持，实时交互体验
 - **中文友好**：原生支持中文，文档完善
 
-**Q: ZipAgent 适合什么场景？**
+**Q: NanoAgent 适合什么场景？**
 
 A: 适用场景：
 - 💬 聊天机器人（客服、问答、闲聊）
@@ -300,11 +294,11 @@ A: 适用场景：
 
 ### 安装与配置
 
-**Q: 如何安装 ZipAgent？**
+**Q: 如何安装 NanoAgent？**
 
 A:
 ```bash
-pip install zipagent
+pip install nanoagent
 ```
 
 **Q: 需要什么环境？**
@@ -317,7 +311,7 @@ A:
 
 A:
 ```python
-from zipagent import OpenAIModel
+from nanoagent import OpenAIModel
 
 model = OpenAIModel(
     model="gpt-4",
@@ -338,7 +332,7 @@ agent = Agent(
 
 A: 使用 `@function_tool` 装饰器：
 ```python
-from zipagent import function_tool
+from nanoagent import function_tool
 
 @function_tool
 def calculate(expression: str) -> str:
@@ -350,7 +344,7 @@ def calculate(expression: str) -> str:
 
 A:
 ```python
-from zipagent import MCPTool
+from nanoagent import MCPTool
 
 # 连接外部 MCP 工具
 amap_tools = await MCPTool.connect(
@@ -367,7 +361,7 @@ agent = Agent(
 
 **Q: 本地工具和 MCP 工具可以混合使用吗？**
 
-A: 可以！ZipAgent 提供统一接口：
+A: 可以！NanoAgent 提供统一接口：
 ```python
 agent = Agent(
     tools=[calculate, amap_tools]  # 混合使用
@@ -380,7 +374,7 @@ agent = Agent(
 
 A:
 ```python
-from zipagent import Runner
+from nanoagent import Runner
 
 result = Runner.run(agent, "计算 23 + 45")
 print(result.content)
@@ -390,7 +384,7 @@ print(result.content)
 
 A:
 ```python
-from zipagent import StreamEventType
+from nanoagent import StreamEventType
 
 for event in Runner.run_stream(agent, "解释什么是人工智能"):
     if event.type == StreamEventType.ANSWER_DELTA:
@@ -403,7 +397,7 @@ for event in Runner.run_stream(agent, "解释什么是人工智能"):
 
 A:
 ```python
-from zipagent import Context
+from nanoagent import Context
 
 context = Context()
 result1 = Runner.run(agent, "我叫小明", context=context)
@@ -420,7 +414,7 @@ print(f"Token 使用: {context.usage}")
 
 A:
 ```python
-from zipagent import ToolExecutionError, MaxTurnsError
+from nanoagent import ToolExecutionError, MaxTurnsError
 
 try:
     result = Runner.run(agent, "计算 10 / 0", max_turns=3)
@@ -437,8 +431,8 @@ except MaxTurnsError as e:
 A:
 ```bash
 # 克隆项目
-git clone https://github.com/JiayuXu0/ZipAgent.git
-cd ZipAgent
+git clone https://github.com/Vanity-1/NanoAgent.git
+cd NanoAgent
 
 # 使用 uv 管理依赖
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -455,7 +449,7 @@ uv run pyright
 **Q: 如何贡献代码？**
 
 A:
-1. 🐛 **报告 Bug**: 提交 [Issue](https://github.com/JiayuXu0/ZipAgent/issues)
+1. 🐛 **报告 Bug**: 提交 [Issue](https://github.com/Vanity-1/NanoAgent/issues)
 2. 💡 **功能建议**: 讨论新功能想法
 3. 📝 **文档改进**: 完善文档和示例
 4. 🔧 **代码贡献**: 提交 Pull Request
@@ -493,6 +487,6 @@ A:
 **Q: 获取更多帮助？**
 
 A:
-- [📚 文档](https://jiayuxu0.github.io/zipagent)
-- [💬 讨论](https://github.com/JiayuXu0/ZipAgent/discussions)
-- [🐛 问题反馈](https://github.com/JiayuXu0/ZipAgent/issues)
+- [📚 文档](https://jiayuxu0.github.io/nanoagent)
+- [💬 讨论](https://github.com/Vanity-1/NanoAgent/discussions)
+- [🐛 问题反馈](https://github.com/Vanity-1/NanoAgent/issues)

@@ -7,7 +7,7 @@
 
 import time
 
-from zipagent import Agent, OpenAIModel, Runner, function_tool
+from nanoagent import Agent, OpenAIModel, Runner, function_tool
 
 
 @function_tool

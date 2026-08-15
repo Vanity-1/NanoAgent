@@ -4,8 +4,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from zipagent import Agent, Context, Tool, function_tool
-from zipagent.model import Model, ModelResponse, Usage
+from nanoagent import Agent, Context, Tool, function_tool
+from nanoagent.model import Model, ModelResponse, Usage
 
 
 @pytest.fixture

@@ -2,8 +2,8 @@
 
 from unittest.mock import Mock
 
-from zipagent import Agent, Tool
-from zipagent.model import OpenAIModel
+from nanoagent import Agent, Tool
+from nanoagent.model import OpenAIModel
 
 
 class TestAgent:

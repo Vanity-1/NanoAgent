@@ -1,4 +1,4 @@
-"""ZipAgent 异常系统
+"""NanoAgent 异常系统
 
 提供结构化的异常类型，帮助用户准确识别和处理错误。
 """
@@ -6,8 +6,8 @@
 from typing import Any
 
 
-class ZipAgentError(Exception):
-    """ZipAgent 基础异常类"""
+class NanoAgentError(Exception):
+    """NanoAgent 基础异常类"""
 
     def __init__(
         self,
@@ -26,7 +26,7 @@ class ZipAgentError(Exception):
         return self.message
 
 
-class ModelError(ZipAgentError):
+class ModelError(NanoAgentError):
     """模型调用相关错误"""
 
     def __init__(
@@ -40,7 +40,7 @@ class ModelError(ZipAgentError):
         super().__init__(message, details, **kwargs)
 
 
-class ToolError(ZipAgentError):
+class ToolError(NanoAgentError):
     """工具执行相关错误"""
 
     def __init__(
@@ -75,7 +75,7 @@ class ToolExecutionError(ToolError):
         )
 
 
-class ContextError(ZipAgentError):
+class ContextError(NanoAgentError):
     """上下文管理相关错误"""
 
     pass
@@ -92,7 +92,7 @@ class TokenLimitError(ContextError):
         super().__init__(msg, details)
 
 
-class MaxTurnsError(ZipAgentError):
+class MaxTurnsError(NanoAgentError):
     """达到最大执行轮次"""
 
     def __init__(self, max_turns: int):
@@ -102,7 +102,7 @@ class MaxTurnsError(ZipAgentError):
         )
 
 
-class ResponseParseError(ZipAgentError):
+class ResponseParseError(NanoAgentError):
     """响应解析错误"""
 
     def __init__(self, message: str, raw_response: Any = None, **kwargs):
@@ -110,7 +110,7 @@ class ResponseParseError(ZipAgentError):
         super().__init__(message, details, **kwargs)
 
 
-class ConfigurationError(ZipAgentError):
+class ConfigurationError(NanoAgentError):
     """配置错误"""
 
     def __init__(self, message: str, config_key: str | None = None):
@@ -118,7 +118,7 @@ class ConfigurationError(ZipAgentError):
         super().__init__(message, details)
 
 
-class StreamError(ZipAgentError):
+class StreamError(NanoAgentError):
     """流式处理相关错误"""
 
     pass
@@ -131,7 +131,7 @@ def create_error_with_context(
     agent_name: str | None = None,
     user_input: str | None = None,
     **kwargs,
-) -> ZipAgentError:
+) -> NanoAgentError:
     """创建带有执行上下文的异常"""
     # 创建错误实例
     error = error_class(message, **kwargs)

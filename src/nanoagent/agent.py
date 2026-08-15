@@ -28,7 +28,7 @@ class Agent:
     """是否启用默认系统提示"""
 
     system_prompt_file: str | None = "system.md"
-    """系统提示文件名，默认为 system.md（在 liteagent 包目录下）"""
+    """系统提示文件名，默认为 system.md（在 nanoagent 包目录下）"""
 
     def __post_init__(self) -> None:
         """初始化后处理"""
@@ -69,7 +69,7 @@ class Agent:
             if os.path.isabs(self.system_prompt_file):
                 file_path = self.system_prompt_file
             else:
-                # 相对路径：先尝试 zipagent 包目录，再尝试当前工作目录
+                # 相对路径：先尝试 nanoagent 包目录，再尝试当前工作目录
                 package_dir = os.path.dirname(__file__)
                 package_file_path = os.path.join(
                     package_dir, self.system_prompt_file

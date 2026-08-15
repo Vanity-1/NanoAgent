@@ -1,23 +1,17 @@
 <div align="center">
 
-⭐ **If this project helps you, please give us a Star!** ⭐
+# NanoAgent
 
-<p align="center">
-  <img src="docs/assets/logo.jpg" alt="ZipAgent Logo" width="120"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=45&duration=3000&pause=1000&color=2E86AB&center=true&vCenter=true&width=300&height=60&lines=ZipAgent" alt="ZipAgent Title"/>
-</p>
-
-[![PyPI version](https://badge.fury.io/py/zipagent.svg)](https://badge.fury.io/py/zipagent)
-[![Downloads](https://pepy.tech/badge/zipagent)](https://pepy.tech/project/zipagent)
-[![Python version](https://img.shields.io/pypi/pyversions/zipagent.svg)](https://pypi.org/project/zipagent/)
+[![PyPI version](https://badge.fury.io/py/nanoagent.svg)](https://badge.fury.io/py/nanoagent)
+[![Downloads](https://pepy.tech/badge/nanoagent)](https://pepy.tech/project/nanoagent)
+[![Python version](https://img.shields.io/pypi/pyversions/nanoagent.svg)](https://pypi.org/project/nanoagent/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[📚 Documentation](https://jiayuxu0.github.io/zipagent) | [🚀 Quick Start](#-quick-start) | [💬 Discussions](https://github.com/JiayuXu0/ZipAgent/discussions) | [🐛 Issues](https://github.com/JiayuXu0/ZipAgent/issues) | [🇨🇳 中文](README.md)
+[📚 Documentation](https://jiayuxu0.github.io/nanoagent) | [🚀 Quick Start](#-quick-start) | [💬 Discussions](https://github.com/Vanity-1/NanoAgent/discussions) | [🐛 Issues](https://github.com/Vanity-1/NanoAgent/issues) | [🇨🇳 中文](README.md)
 
 </div>
 
-ZipAgent is a modern Python AI Agent framework focused on simplicity, efficiency, and extensibility. **Built with just 700 lines of core code to implement a complete intelligent agent framework with Agent engine, tool system, and conversation management, enabling you to quickly build your own AI assistant.**
+NanoAgent is a modern Python AI Agent framework focused on simplicity, efficiency, and extensibility. **Built with just 700 lines of core code to implement a complete intelligent agent framework with Agent engine, tool system, and conversation management, enabling you to quickly build your own AI assistant.**
 
 ## 🎯 Use Cases
 
@@ -73,13 +67,13 @@ ZipAgent is a modern Python AI Agent framework focused on simplicity, efficiency
 ### Installation
 
 ```bash
-pip install zipagent
+pip install nanoagent
 ```
 
 ### 5-Minute Tutorial
 
 ```python
-from zipagent import Agent, Runner, function_tool
+from nanoagent import Agent, Runner, function_tool
 
 # 1. Define tools
 @function_tool
@@ -104,7 +98,7 @@ print(result.content)  # "The result of 23 + 45 is 68"
 ### 🌊 Streaming Output
 
 ```python
-from zipagent import StreamEventType
+from nanoagent import StreamEventType
 
 # Real-time streaming response
 for event in Runner.run_stream(agent, "Explain artificial intelligence"):
@@ -117,7 +111,7 @@ for event in Runner.run_stream(agent, "Explain artificial intelligence"):
 ### 📝 Context Management
 
 ```python
-from zipagent import Context
+from nanoagent import Context
 
 # Multi-turn conversation
 context = Context()
@@ -134,7 +128,7 @@ print(f"Token usage: {context.usage}")
 ### 🔗 MCP Tool Integration
 
 ```python
-from zipagent import MCPTool
+from nanoagent import MCPTool
 
 # Connect external MCP tools
 async def demo():
@@ -161,7 +155,7 @@ async def demo():
 ### Exception Handling
 
 ```python
-from zipagent import ToolExecutionError, MaxTurnsError
+from nanoagent import ToolExecutionError, MaxTurnsError
 
 try:
     result = Runner.run(agent, "Calculate 10 / 0", max_turns=3)
@@ -174,7 +168,7 @@ except MaxTurnsError as e:
 ### Custom Models
 
 ```python
-from zipagent import OpenAIModel
+from nanoagent import OpenAIModel
 
 # Custom model configuration
 model = OpenAIModel(
@@ -194,8 +188,8 @@ agent = Agent(
 ## 🏗️ Project Architecture
 
 ```
-ZipAgent/
-├── src/zipagent/           # Core framework
+NanoAgent/
+├── src/nanoagent/           # Core framework
 │   ├── agent.py            # Agent core class
 │   ├── context.py          # Context management
 │   ├── model.py            # LLM model abstraction
@@ -226,8 +220,8 @@ ZipAgent/
 
 ```bash
 # Clone project
-git clone https://github.com/JiayuXu0/ZipAgent.git
-cd ZipAgent
+git clone https://github.com/Vanity-1/NanoAgent.git
+cd NanoAgent
 
 # Use uv for dependency management (recommended)
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -245,7 +239,7 @@ uv run pyright
 
 We welcome all forms of contributions!
 
-1. 🐛 **Report Bugs**: Submit [Issues](https://github.com/JiayuXu0/ZipAgent/issues)
+1. 🐛 **Report Bugs**: Submit [Issues](https://github.com/Vanity-1/NanoAgent/issues)
 2. 💡 **Feature Suggestions**: Discuss new feature ideas
 3. 📝 **Documentation**: Improve docs and examples
 4. 🔧 **Code Contributions**: Submit Pull Requests
@@ -287,7 +281,7 @@ Thanks to all contributors and community support!
 ---
 
 <div align="center">
-  <a href="https://github.com/JiayuXu0/ZipAgent">
-    <img src="https://img.shields.io/github/stars/JiayuXu0/ZipAgent?style=social" alt="GitHub stars">
+  <a href="https://github.com/Vanity-1/NanoAgent">
+    <img src="https://img.shields.io/github/stars/Vanity-1/NanoAgent?style=social" alt="GitHub stars">
   </a>
 </div>

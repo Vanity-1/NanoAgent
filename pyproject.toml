@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "zipagent"
+name = "nanoagent"
 version = "0.1.9"
 description = "轻量级的 AI Agent 框架"
 readme = "README.md"
@@ -52,9 +52,9 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/JiayuXu0/ZipAgent"
-Repository = "https://github.com/JiayuXu0/ZipAgent.git"
-Issues = "https://github.com/JiayuXu0/ZipAgent/issues"
+Homepage = "https://github.com/Vanity-1/NanoAgent"
+Repository = "https://github.com/Vanity-1/NanoAgent.git"
+Issues = "https://github.com/Vanity-1/NanoAgent/issues"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -65,7 +65,7 @@ include = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/zipagent"]
+packages = ["src/nanoagent"]
 
 [tool.pyright]
 include = ["src", "tests"]
@@ -113,7 +113,7 @@ docstring-code-format = true
 docstring-code-line-length = 79
 
 [tool.ruff.lint.isort]
-known-first-party = ["zipagent"]
+known-first-party = ["nanoagent"]
 
 [tool.pytest.ini_options]
 minversion = "7.0"
@@ -124,7 +124,7 @@ python_functions = ["test_*"]
 addopts = [
     "-ra",
     "--strict-markers",
-    "--cov=src/zipagent",
+    "--cov=src/nanoagent",
     "--cov-report=term-missing",
     "--cov-report=html",
 ]
@@ -135,7 +135,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["src/zipagent"]
+source = ["src/nanoagent"]
 omit = ["*/tests/*", "*/__init__.py"]
 
 [tool.coverage.report]
@@ -154,13 +154,13 @@ exclude_lines = [
 ]
 
 [tool.uv.sources]
-zipagent = { workspace = true }
+nanoagent = { workspace = true }
 
 
 [dependency-groups]
 dev = [
     "build>=1.3.0",
-    "zipagent",
+    "nanoagent",
     "mypy>=1.14.1",
     "pyright>=1.1.403",
     "pytest>=8.3.5",

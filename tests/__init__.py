@@ -1,1 +1,1 @@
-"""ZipAgent 测试套件"""
+"""NanoAgent 测试套件"""

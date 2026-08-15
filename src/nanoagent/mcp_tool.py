@@ -2,11 +2,11 @@
 MCP 工具集成模块
 
 基于官方 MCP Python SDK 实现，提供 MCP 服务器的工具导入和管理功能。
-支持工具选择、进程管理和与 LiteAgent 工具系统的统一集成。
+支持工具选择、进程管理和与 NanoAgent 工具系统的统一集成。
 
 使用示例:
-    from liteagent import Agent, function_tool
-    from liteagent.mcp_tool import MCPToolPool
+    from nanoagent import Agent, function_tool
+    from nanoagent.mcp_tool import MCPToolPool
 
     @function_tool
     def calculate(x: int) -> int:
@@ -189,7 +189,7 @@ class MCPClient:
 
 
 class MCPTool(Tool):
-    """MCP 工具包装器，将 MCP 工具包装为 ZipAgent 工具"""
+    """MCP 工具包装器，将 MCP 工具包装为 NanoAgent 工具"""
 
     # 类级别的连接管理
     _global_pool: Optional["_MCPToolPool"] = None

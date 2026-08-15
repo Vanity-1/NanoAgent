@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ZipAgent 流式工具调用演示
+NanoAgent 流式工具调用演示
 
 测试流式响应中的工具调用，包括：
 1. 流式思考过程
@@ -16,7 +16,7 @@ import random
 import time
 from datetime import datetime
 
-from zipagent import Agent, Context, OpenAIModel, Runner, function_tool
+from nanoagent import Agent, Context, OpenAIModel, Runner, function_tool
 
 # ================== 工具定义 ==================
 
@@ -327,7 +327,7 @@ def interactive_mode():
 
 def main():
     """主函数"""
-    print("🚀 ZipAgent 流式工具调用演示")
+    print("🚀 NanoAgent 流式工具调用演示")
     print("=" * 100)
     print("本演示将测试不同场景下的流式工具调用：")
     print("- 简单工具调用")

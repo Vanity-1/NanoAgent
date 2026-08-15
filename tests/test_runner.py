@@ -2,7 +2,7 @@
 
 from unittest.mock import MagicMock, patch
 
-from zipagent import (
+from nanoagent import (
     Agent,
     Context,
     ModelResponse,
@@ -11,7 +11,7 @@ from zipagent import (
     StreamEventType,
     function_tool,
 )
-from zipagent.model import Usage, StreamDelta
+from nanoagent.model import Usage, StreamDelta
 
 
 def mock_generate_stream(content, tool_calls=None, usage=None):

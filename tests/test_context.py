@@ -2,8 +2,8 @@
 
 from datetime import datetime
 
-from zipagent import Context
-from zipagent.context import Usage
+from nanoagent import Context
+from nanoagent.context import Usage
 
 
 class TestUsage:

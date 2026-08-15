@@ -7,8 +7,8 @@ import os
 
 import pytest
 
-from zipagent import Agent, Model, ModelResponse, OpenAIModel, Runner
-from zipagent.context import Usage
+from nanoagent import Agent, Model, ModelResponse, OpenAIModel, Runner
+from nanoagent.context import Usage
 
 
 class TestModelIntegration:
@@ -119,7 +119,7 @@ class TestModelIntegration:
                     finish_reason="stop",
                 )
 
-        from zipagent import function_tool
+        from nanoagent import function_tool
 
         @function_tool
         def test_tool(arg: str) -> str:
@@ -253,7 +253,7 @@ class TestModelRobustness:
                     finish_reason="tool_calls",
                 )
 
-        from zipagent import function_tool
+        from nanoagent import function_tool
 
         @function_tool
         def test() -> str:

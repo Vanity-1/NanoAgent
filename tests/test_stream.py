@@ -1,6 +1,6 @@
 """测试 Stream 模块"""
 
-from zipagent.stream import StreamEvent, StreamEventType
+from nanoagent.stream import StreamEvent, StreamEventType
 
 
 class TestStreamEventType:

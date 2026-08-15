@@ -15,7 +15,7 @@ from .exceptions import (
     ToolError,
     ToolExecutionError,
     ToolNotFoundError,
-    ZipAgentError,
+    NanoAgentError,
 )
 from .model import LiteLLMModel, Model, ModelResponse, OpenAIModel, StreamDelta
 from .runner import Runner, RunResult
@@ -55,7 +55,7 @@ __all__ = [
     # MCP 工具（可选）
     *(["MCPTool", "MCPToolGroup"] if _MCP_AVAILABLE else []),
     # 异常类
-    "ZipAgentError",
+    "NanoAgentError",
     "ModelError",
     "ToolError",
     "ToolNotFoundError",

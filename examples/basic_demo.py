@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ZipAgent 基础功能演示
+NanoAgent 基础功能演示
 
 展示核心功能：
 1. 基础 Agent 创建和使用
@@ -11,7 +11,7 @@ ZipAgent 基础功能演示
 
 from datetime import datetime
 
-from zipagent import Agent, Context, Runner, function_tool
+from nanoagent import Agent, Context, Runner, function_tool
 
 # ========== 工具定义 ==========
 
@@ -184,7 +184,7 @@ def demo_4_error_handling():
 
 def main():
     """主演示函数"""
-    print("🚀 ZipAgent 基础功能演示")
+    print("🚀 NanoAgent 基础功能演示")
     print("展示核心功能：基础用法、Context管理、异常处理")
 
     try:
