@@ -2,9 +2,8 @@
 
 # NanoAgent
 
-[![PyPI version](https://badge.fury.io/py/nanoagent.svg)](https://badge.fury.io/py/nanoagent)
-[![Downloads](https://pepy.tech/badge/nanoagent)](https://pepy.tech/project/nanoagent)
-[![Python version](https://img.shields.io/pypi/pyversions/nanoagent.svg)](https://pypi.org/project/nanoagent/)
+[![GitHub Release](https://img.shields.io/github/v/release/Vanity-1/NanoAgent?label=Release)](https://github.com/Vanity-1/NanoAgent/releases)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [📚 文档](https://jiayuxu0.github.io/nanoagent) | [🚀 快速开始](#-快速开始) | [💬 讨论](https://github.com/Vanity-1/NanoAgent/discussions) | [🐛 问题反馈](https://github.com/Vanity-1/NanoAgent/issues) | [🌍 English](README_EN.md)
@@ -67,7 +66,13 @@ NanoAgent 是一个现代化的 Python AI Agent 框架，专注于简洁、高�
 ### 安装
 
 ```bash
-pip install nanoagent
+pip install git+https://github.com/Vanity-1/NanoAgent.git
+```
+
+或从 [GitHub Releases](https://github.com/Vanity-1/NanoAgent/releases) 下载 wheel 包后本地安装：
+
+```bash
+pip install nanoagent-0.1.9-py3-none-any.whl
 ```
 
 ### 5分钟上手
@@ -298,8 +303,10 @@ A: 适用场景：
 
 A:
 ```bash
-pip install nanoagent
+pip install git+https://github.com/Vanity-1/NanoAgent.git
 ```
+
+或从 [GitHub Releases](https://github.com/Vanity-1/NanoAgent/releases) 下载 wheel 包后本地安装。
 
 **Q: 需要什么环境？**
 

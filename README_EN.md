@@ -2,9 +2,8 @@
 
 # NanoAgent
 
-[![PyPI version](https://badge.fury.io/py/nanoagent.svg)](https://badge.fury.io/py/nanoagent)
-[![Downloads](https://pepy.tech/badge/nanoagent)](https://pepy.tech/project/nanoagent)
-[![Python version](https://img.shields.io/pypi/pyversions/nanoagent.svg)](https://pypi.org/project/nanoagent/)
+[![GitHub Release](https://img.shields.io/github/v/release/Vanity-1/NanoAgent?label=Release)](https://github.com/Vanity-1/NanoAgent/releases)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [📚 Documentation](https://jiayuxu0.github.io/nanoagent) | [🚀 Quick Start](#-quick-start) | [💬 Discussions](https://github.com/Vanity-1/NanoAgent/discussions) | [🐛 Issues](https://github.com/Vanity-1/NanoAgent/issues) | [🇨🇳 中文](README.md)
@@ -67,7 +66,13 @@ NanoAgent is a modern Python AI Agent framework focused on simplicity, efficienc
 ### Installation
 
 ```bash
-pip install nanoagent
+pip install git+https://github.com/Vanity-1/NanoAgent.git
+```
+
+Or download the wheel package from [GitHub Releases](https://github.com/Vanity-1/NanoAgent/releases) and install locally:
+
+```bash
+pip install nanoagent-0.1.9-py3-none-any.whl
 ```
 
 ### 5-Minute Tutorial
