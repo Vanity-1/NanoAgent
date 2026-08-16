@@ -1,6 +1,6 @@
 """Simple Agent Framework - 简化的Agent框架实现"""
 
-__version__ = "0.1.8"
+__version__ = "0.1.9"
 
 from .agent import Agent
 from .context import Context
